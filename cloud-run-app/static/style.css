@@ -1,0 +1,81 @@
+@font-face {
+    font-family: Rajdhani-Light;
+    src: url(fonts/Rajdhani-Light.ttf);
+}
+
+body {
+    font-family: Rajdhani-Light;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(45deg, rgb(11, 81, 58), black);
+    min-height: 100vh;
+    margin: 0;
+    justify-content: center;
+}
+
+@media (max-width: 576px) {
+    body {
+        display: block;
+        align-items: initial;
+    }
+}
+
+#heading {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    max-height: 70vh;
+    margin: 10vh;
+    padding: 10px;
+}
+
+#text {
+    background-color: aliceblue;
+    color: black;
+}
+
+#placeholder-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-white {
+    color: white;
+}
+
+.rounded {
+    border-radius: 5px;
+}
+
+.selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selection img {
+    width: 70px;
+    border-radius: 100%;
+    border: solid black;
+    margin: 0 5px;
+}
+
+.vote-icons {
+    font-size: 50px;
+    background: transparent;
+    padding: 10px;
+    margin-inline: 25px;
+}
+
+.vote-icons:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
