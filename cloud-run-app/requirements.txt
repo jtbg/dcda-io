@@ -2,3 +2,4 @@ requests==2.31.0
 Flask==3.0.0
 gunicorn==20.1.0
 Werkzeug==3.0.1
+google-cloud-pubsub==2.21.1
