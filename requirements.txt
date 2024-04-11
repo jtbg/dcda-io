@@ -1,6 +1,0 @@
-# Dev environment
-pip
-autopep8
-
-# App
-flask

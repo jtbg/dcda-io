@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>dcda</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <!--  <div id="" class="text-center text-white">
+    <h1>Devanagari Character Dataset Automation</h1>
+    <p>Version 1 [Word tagging]</p>
+  </div>-->
+  <div id="heading" class="text-white text-center">
+    <h2>Does the text in the below image match the text given in the box?</h2>
+    <img src="{{ url_for('static', filename='images/cropped_words/' + render_image) }}" alt="Emoji">
+    <div id="text" class="rounded">
+      <h1>{{ render_word }}</h1>
+    </div>
+    <form method="POST" action="/vote">
+      <input type="hidden" name="word_voted_on" value="{{ render_image }}">
+      <button type="submit" name="vote" value="up" class="vote-icons">✅</button>
+      <button type="submit" name="vote" value="down" class="vote-icons">❌</button>
+    </form>
+</body>
+
+</html>
