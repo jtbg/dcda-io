@@ -1,7 +1,6 @@
 import json
 import os
 import random
-import sqlite3
 from flask import Flask, render_template, request, redirect, url_for
 from google.cloud import pubsub_v1
 
@@ -19,22 +18,6 @@ TOPIC_NAME = "dcda-io-votes"
 
 publisher = pubsub_v1.PublisherClient()
 topic_path = publisher.topic_path(PROJECT_ID, TOPIC_NAME)
-
-
-# Database setup
-def get_db_connection():
-    conn = sqlite3.connect("responses.db")
-    conn.row_factory = sqlite3.Row
-    return conn
-
-
-# Initialize the database (run this once to create the table)
-def init_db():
-    conn = get_db_connection()
-    with open("schema.sql", "r") as f:
-        conn.executescript(f.read())
-    conn.commit()
-    conn.close()
 
 
 @app.route("/")
@@ -64,17 +47,6 @@ def vote():
 
     # Publish the message
     future = publisher.publish(topic_path, data)
-
-    # insert the vote into the database
-    conn = get_db_connection()
-    cursor = conn.execute(
-        "INSERT INTO votes (image_file, direction) VALUES (?, ?)",
-        (image_file, vote_type),
-    )
-
-    conn.commit()
-    conn.close()
-
     return redirect(url_for("index"))
 
 
