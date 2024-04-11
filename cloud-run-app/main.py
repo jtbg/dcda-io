@@ -3,13 +3,22 @@ import os
 import random
 import sqlite3
 from flask import Flask, render_template, request, redirect, url_for
+from google.cloud import pubsub_v1
 
+# Flask setup
 app = Flask(__name__)
 
 # The images of words we want to test
 test_images = os.listdir("static/images/cropped_words")
 f = open("static/ocr_results.json")
 ocr_results = json.load(f)
+
+# GCP setup
+PROJECT_ID = "dcda-ocr"
+TOPIC_NAME = "dcda-io-votes"
+
+publisher = pubsub_v1.PublisherClient()
+topic_path = publisher.topic_path(PROJECT_ID, TOPIC_NAME)
 
 
 # Database setup
@@ -43,16 +52,29 @@ def index():
 
 @app.route("/vote", methods=["POST"])
 def vote():
-    conn = get_db_connection()
     image_file = request.form["word_voted_on"]
     vote_type = request.form["vote"]
 
+    message_data = {
+        "image_file": image_file,
+        "vote_type": vote_type,
+    }
+    # Convert the message data to bytestring
+    data = json.dumps(message_data).encode("utf-8")
+
+    # Publish the message
+    future = publisher.publish(topic_path, data)
+
+    # insert the vote into the database
+    conn = get_db_connection()
     cursor = conn.execute(
         "INSERT INTO votes (image_file, direction) VALUES (?, ?)",
         (image_file, vote_type),
     )
+
     conn.commit()
     conn.close()
+
     return redirect(url_for("index"))
 
 
