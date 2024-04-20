@@ -1,4 +1,4 @@
-#!c:\users\kishl\onedrive\desktop\dcwebsite\dcda-io\enc\scripts\python.exe
+#!/home/kishl/fresh/dcda-io/cloud-run-app/env/bin/python3
 # -*- coding: utf-8 -*-
 # Copyright 2024 Google LLC
 #
