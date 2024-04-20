@@ -4,6 +4,9 @@
 <head>
   <title>dcda</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -12,7 +15,7 @@
     <p>Version 1 [Word tagging]</p>
   </div>-->
   <div id="heading" class="text-white text-center">
-    <h2>Does the text in the below image match the text given in the box?</h2>
+    <h2>Does the text in the below image match the text given in the sbox?</h2>
     <img src="{{ url_for('static', filename='images/cropped_words/' + render_image) }}" alt="Emoji">
     <div id="text" class="rounded">
       <h1>{{ render_word }}</h1>
