@@ -162,4 +162,3 @@ cython_debug/
 .vscode/
 .idx/
 *.db
-*/static/images/
