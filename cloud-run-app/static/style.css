@@ -23,17 +23,11 @@ body {
     min-height: 100vh;
     margin: 0;
     justify-content: center;
-}
-
-@media (max-width: 576px) {
-    body {
-        display: block;
-        align-items: initial;
-    }
+    background: linear-gradient(#e66465, #9198e5);
 }
 
 #heading {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 5px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
@@ -46,7 +40,7 @@ body {
 
 #text {
     background-color: aliceblue;
-    font-family: "Kalam", cursive; /* Apply Kalam Regular here */
+    font-family: "Kalam", cursive; /* Applied Kalam Regular here */
     font-weight: 400;
 }
 
@@ -63,7 +57,7 @@ body {
 .rounded {
     border-radius: 5px;
 }
-/* nevermind*/
+
 
 .selection {
     display: flex;
@@ -83,6 +77,8 @@ body {
     background: transparent;
     padding: 10px;
     margin-inline: 25px;
+    border: solid 2px rgb(40, 61, 180);
+    border-radius: 7px;
 }
 
 .vote-icons:hover {

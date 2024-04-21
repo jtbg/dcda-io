@@ -81,4 +81,4 @@ def vote():
 if __name__ == "__main__":
     # init_db()  # Initialize database on first run
     server_port = os.environ.get("PORT", "8080")
-    app.run(debug=False, port=server_port, host="0.0.0.0")
+    app.run(debug=True, port=server_port, host="0.0.0.0")
