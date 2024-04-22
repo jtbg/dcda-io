@@ -7,6 +7,8 @@ from google.cloud import pubsub_v1
 
 # Flask setup
 app = Flask(__name__)
+app.config['TEMPLATES_AUTO_RELOAD'] = True
+
 
 # The images of words we want to test
 test_images = os.listdir("static/images/cropped_words")
