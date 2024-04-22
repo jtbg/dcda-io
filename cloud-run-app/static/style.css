@@ -36,10 +36,30 @@ body {
     margin: 10vh;
     padding: 10px;
 }
+.maintext{
+    width: 80%;
+    border-radius: 5px;
+    height: 5vh;
+    background: rgba(255, 255, 255, 0.5);
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin:auto;
+    margin-top: 10px;
+    display: flex;
+    
+}
+.right-half {
+    display: flex;
+    align-items: center;
+}
 
+.right-half > div {
+    margin-right: 10px;
+}
 #text {
     background-color: aliceblue;
-    font-family: "Kalam", cursive; /* Applied Kalam Regular here */
+    font-family: "Kalam", cursive;
     font-weight: 400;
 }
 
@@ -51,6 +71,7 @@ body {
 .text-center {
     text-align: center;
 }
+
 
 
 .rounded {

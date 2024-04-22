@@ -10,7 +10,15 @@
 </head>
 
 <body>
-  <div class="maintext">Hello world!</div>
+<div class="maintext">
+  <div class="left-half">Hello world</div>
+  <div class="right-half">
+    <div>About</div>
+    <div>Github</div>
+    <div>Contact</div>
+    <div></div>
+  </div>
+</div>
   <div id="heading" class="text-white text-center">
     <h2>Does the text in the below image match the text given in the box?</h2>
     <img src="{{ url_for('static', filename='images/cropped_words/' + render_image) }}" alt="Emoji">
