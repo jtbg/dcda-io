@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>dcda</title>
+  <style>
+    body {
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      justify-content: center;
+      background: linear-gradient(#e66465, #9198e5);
+    }
+
+    #heading {
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 5px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      max-height: 70vh;
+      margin: 10vh;
+      padding: 10px;
+    }
+
+    .maintext {
+      width: 80%;
+      border-radius: 5px;
+      height: 5vh;
+      background: rgba(255, 255, 255, 0.5);
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+      margin: auto;
+      margin-top: 10px;
+      display: flex;
+    }
+
+    #text {
+      background-color: aliceblue;
+      font-family: "Kalam", cursive;
+      font-weight: 400;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .right-half {
+      display: flex;
+      align-items: center;
+    }
+
+    .right-half>div {
+      margin-right: 10px;
+    }
+
+    .selection img {
+      width: 70px;
+      border-radius: 100%;
+      border: solid black;
+      margin: 0 5px;
+    }
+
+    .vote-icons {
+      font-size: 50px;
+      background: transparent;
+      padding: 10px;
+      margin-inline: 25px;
+      border: solid 2px rgb(40, 61, 180);
+      border-radius: 7px;
+    }
+
+    .vote-icons:hover {
+      cursor: pointer;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="maintext">
+    <div class="left-half">Hello world</div>
+    <div class="right-half">
+      <div><a href="{{ url_for('about') }}">About</a></div>
+      <div><a href="{{ url_for('gtb') }}">GitHub</a></div>
+      <div><a href="{{ url_for('contact') }}">Contact</a></div>
+      <div></div>
+    </div>
+  </div>
+  <div id="heading" class="text-white text-center">
+    <!-- Your content here -->
+  </div>
+</body>
+
+</html>

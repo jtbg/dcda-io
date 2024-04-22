@@ -87,6 +87,10 @@ def about():
 def contact():
     return render_template("contact.html")
 
+@app.route("/gtb")
+def gtb():
+    return redirect("https://github.com/kishlay-notabot/dcda")
+
 
 if __name__ == "__main__":
     # init_db()  # Initialize database on first run
